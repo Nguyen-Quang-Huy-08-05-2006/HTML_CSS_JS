@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: rgb(240 240 240); 
+}
+.full{
+    border-style: solid;
+    border-radius: 9px;
+    background-color: white;
+    position: relative;
+    width: 30%;
+    left: 540px;
+    top: 100px;
+    border-color: rgb(242 242 242);
+    padding-bottom: 80px;
+}
+.head {
+    text-align: center;
+    background-color: rgb(237 26 53);
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+img{
+    position: fixed;
+    right: 500px;
+    top: 80px;
+}
+span{
+    color: rgb(255 144 11);
+}
+p{
+    text-align: center;
+}
+p:nth-child(1) {
+    border-bottom-style:solid ;
+    width: 400px;
+    position: relative;
+    left: 28px;
+    border-color: rgb(220 220 220);
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+p:nth-child(2) {
+    border-bottom-style:solid ;
+    width: 400px;
+    position: relative;
+    left: 28px;
+    border-color: rgb(220 220 220);
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+p:nth-child(3) {
+    border-bottom-style:solid ;
+    width: 400px;
+    position: relative;
+    left: 28px;
+    border-color: rgb(220 220 220);
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+p:nth-child(4) {
+    border-bottom-style:solid ;
+    width: 400px;
+    position: relative;
+    left: 28px;
+    border-color: rgb(220 220 220);
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+p:nth-child(5) {
+    border-bottom-style:solid ;
+    width: 400px;
+    position: relative;
+    left: 28px;
+    border-color: rgb(220 220 220);
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+p:nth-child(6) {
+    border-bottom-style:solid ;
+    width: 400px;
+    position: relative;
+    left: 28px;
+    border-color: rgb(220 220 220);
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+.p{
+    padding-bottom: 70px;
+}
+button:nth-child(1) {
+    font-size: 20px;
+    border-radius: 100px;
+    width: 300px;
+    height: 60px;
+    background-color: rgb(230 25 52);
+    color: white;
+    position: relative;
+    left: 80px;
+    border-style: solid;
+    border-color: white;
+
+}
+button:nth-child(2) {
+    font-size: 20px;
+    border-radius: 100px;
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    color: white;
+    position: fixed;
+    left: 720px;
+    border-style: solid;
+    border-color: white;
+    top:620px;
+    color: rgb(230 25 52);
+    border-color:rgb(230 25 52) ;
+}

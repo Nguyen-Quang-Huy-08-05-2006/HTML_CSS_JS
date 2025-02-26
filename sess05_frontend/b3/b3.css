@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(0deg 0% 95.69%);
+}
+.caption{
+    color:hsl(208.13deg 20.51% 30.59%);
+    font-weight: 700;
+}
+table,th,td{
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 50%;
+    padding: 10px;
+}
+th{
+    color: white;
+    background-color: hsl(211.3deg 100% 50.39%);
+}
+.tr1 td{
+    background-color:hsl(0deg 0% 93%);
+}
+.tr2 td{
+    background-color: hsl(0deg 0% 100%);
+}
+

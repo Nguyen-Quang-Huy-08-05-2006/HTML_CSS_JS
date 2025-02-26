@@ -1,0 +1,13 @@
+.box{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    background-color: brown;
+    color: white;
+    /* transform: rotate(90deg); */
+    /* transform: translate(90px,90px); */
+    transition: all 10s linear;
+}
+.box:hover{
+    transform: scale(2) rotate(90deg) translate(90px,-90px);
+}

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+*{
+    background-color: black;
+}
+.h1{
+    color: white;
+}
+.img{
+    height: 50%;
+    width: 40%;
+}
+.p{
+    color: hsl(146.8deg 100% 50.39%);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-decoration:underline;
+    text-decoration-style:dotted;
+}

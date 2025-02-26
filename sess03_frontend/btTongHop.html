@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BT tong hop</title>
+  </head>
+  <body>
+    <form action="">
+      <h1>Them moi nhan vien</h1>
+      <div>
+        <label for="Username">Ho va ten</label>
+        <input type="text" required id="Username" name="Username" />
+      </div>
+      <br />
+      <div>
+        <label for="dateOfBirth">Ngay sinh day du</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" />
+      </div>
+      <br />
+      <div>
+        <label for="monthAndYear">Thang va nam</label>
+        <input type="month" id="monthAndYear" name="monthAndYear" />
+      </div>
+      <br />
+      <div>
+        <label for="time">Thoi gian</label>
+        <input type="time" name="" id="time" />
+      </div>
+      <br />
+      <div>
+        <label for="gender">gioi tinh</label>
+        <label for="">
+          <input type="radio" id="gender" name="gender" value="male" />Nam
+        </label>
+        <label for="">
+          <input type="radio" id="gender" name="gender" value="female" />Nu
+        </label>
+        <label for="">
+          <input type="radio" id="gender" name="gender" value="other" />Khac
+        </label>
+      </div>
+      <br />
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" required id="email" />
+      </div>
+      <br />
+      <div>
+        <label for="password">Mat khau</label>
+        <input type="password" name="password" required id="password" />
+      </div>
+      <br />
+      <label for="about">Gioi thieu ban than</label>
+      <div>
+        <textarea name="about" id="about"></textarea>
+      </div>
+      <br />
+      <div>
+        <label for="city">thanh pho</label>
+        <select name="city" id="city">
+          <option value="">Ha Noi</option>
+          <option value="">Da Nang</option>
+          <option value="">TP. Ho Chi Minh</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <label for="file">Hinh anh <input type="file" /></label>
+      </div>
+      <br />
+      <div>
+        <label for="">
+          So thich
+          <label for=""
+            ><input type="checkbox" name="hobby" id="code" />code</label
+          >
+          <label for=""
+            ><input type="checkbox" name="hobby" id="gaming" />choi game</label
+          >
+          <label for=""
+            ><input type="checkbox" name="hobby" id="swim" />boi loi</label
+          >
+          <label for=""
+            ><input type="checkbox" name="hobby" id="football" />da bong</label
+          >
+        </label>
+      </div>
+      <br />
+      <div>
+        <label for=""
+          >Tien do hoan thanh cong viec <input type="range"
+        /></label>
+      </div>
+      <br />
+      <div>
+        <label for="experience"
+          >Nam kinh nghiem
+          <input
+            type="number"
+            name="experience"
+            id="experience"
+            min="1"
+            max="10"
+        /></label>
+      </div>
+      <br />
+      <div>
+        <input type="button" value="Huy" />
+        <input type="reset" value="Lam moi" />
+        <input type="submit" value="Gui?" />
+      </div>
+    </form>
+  </body>
+</html>

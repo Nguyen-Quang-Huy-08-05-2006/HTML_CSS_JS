@@ -1,0 +1,50 @@
+/* reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 600px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 8px;
+    background-color: rgb(189, 189, 189);
+    padding: 24px;
+}
+.h1{
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+.paragraph{
+    color: azure;
+}
+.textRed{
+    color: red;
+    font-weight: 600;
+}
+.blockCode{
+    background-color: aqua;
+    border-left-width: 4px ;
+    border-left-style:solid ;
+    border-left-color:chartreuse;
+}
+.textPink{
+    color:bisque;
+}
+.textRedLight{
+    color: brown;
+}
+.button{
+    background-color: aquamarine;
+    padding: 4px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+}
+.button:hover{
+    background-color: rgb(0, 255, 17);
+    cursor:pointer;
+}

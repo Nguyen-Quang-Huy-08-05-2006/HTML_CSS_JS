@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.all{
+    padding: 5px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 630px;
+    gap: 5px;
+}
+.head{
+    background-color: hsl(204.07deg 69.87% 53.14%);
+    color: white;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+.sidebar{
+    background-color: hsl(145.44deg 63.2% 49.02%);
+    color: white;
+    width: 30%;
+    padding: 10px;
+}
+.content{
+    background-color:hsl(5.61deg 78.08% 57.06%) ;
+    width: 70%;
+    color: white;
+    padding: 10px;
+}
+.foot{
+    background-color: hsl(282.58deg 38.91% 53.14%);
+    color: white;
+    padding: 10px;
+    margin-top: 5px;
+}

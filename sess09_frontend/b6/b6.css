@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.all{
+    padding: 5px;
+}
+.box1{
+    display: flex;
+
+    flex-wrap: wrap; 
+}
+.box2{
+    display: flex;
+
+    flex-wrap: wrap; 
+}
+.big{
+    width: 40%;
+    height: 200px;
+    background-color: hsl(210deg 29.03% 24.31%);
+    color: white;
+    margin-bottom: 5px;
+}
+.small{
+     background-color: hsl(210deg 29.03% 24.31%); 
+    color: white;
+    width: 35%;
+    height: 20px;
+    padding: 50px;
+    margin-left: 5px;
+}
+.a{
+    display: flex;
+    flex-wrap: wrap;
+}

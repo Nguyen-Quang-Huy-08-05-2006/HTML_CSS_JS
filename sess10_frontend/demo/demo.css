@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    list-style: none;
+}
+header{
+    background-color: hsl(33.33deg 60% 94.12%);
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 48px;
+}
+.container{
+
+}
+.left {
+}
+.right {
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 48px;
+}
+.items {
+    border: 1px solid;
+    flex-basis: calc(25% - 12px);
+    flex-shrink: 1;
+    flex-grow: 1;
+}

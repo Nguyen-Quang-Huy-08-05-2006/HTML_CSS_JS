@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.container{
+    
+}
+header{
+    height: 56px;
+    padding: 0 48px;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: red;
+}
+.menu{
+    font-size: 24px;
+    display: none;
+}
+.left{
+    font-size: 24px;
+    font-weight: 600;
+}
+.right{
+    font-size: 24px;
+    text-decoration: none;
+    color: red;
+}
+.layout{
+    gap: 12px;
+    
+}
+.content{
+    display: flex;
+    height: 300px;
+    gap: 12px;
+    padding: 10px;
+}
+main{
+    background-color: red;
+    flex: 2;
+}
+.category{
+    background-color: aqua;
+    flex: 1;
+}
+.relationship{
+    background-color: green;
+    flex: 1;
+}
+.list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+}
+.item {
+    list-style: none;
+    flex: 1;
+    background-color: chocolate;
+    padding: 12px;
+}   
+footer{
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}
+.fleft {
+
+}
+.fright {
+}
+/* Mobile: width < 768px */
+/* max-width: Tức là bé hơn 767px */
+/* min-width: Tức là lớn hơn 768px */
+@media screen and (max-width: 767px) {
+    .menu{
+        display: block;
+    }
+    .link{
+        display: none;
+    }
+    header{
+        padding: 0 24px ;
+    }
+    .content{
+        flex-direction: column;
+
+    }
+    .layout{
+        padding: 24px;
+    }
+    .item{
+        flex-basis: calc(100%-12px);
+    }
+  }
+  
+  /* Tablet: width >= 768px and width < 1024px */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .item{
+        flex-basis: calc(50%-12px);
+    }
+  }
+  
+  /* PC: width >= 1024px */
+  @media screen and (min-width: 1024px) {
+
+  }

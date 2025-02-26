@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = [
+        +prompt("nhap so thu nhat"),
+        +prompt("nhap so thu hai"),
+        +prompt("nhap so thu ba"),
+      ];
+      let a;
+      for (let i = 0; i < num.length; i++) {
+        if (num[i] < num[i + 1]) {
+          a = num[i + 1];
+        } else if (num[i] > num[i + 1]) {
+          a = num[i];
+        }
+      }
+      alert(`so lon nhat trong [${num[0]},${num[1]},${num[2]}] la ${a}`);
+    </script>
+  </body>
+</html>

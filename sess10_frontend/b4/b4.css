@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    background-color: hsl(35.68deg 64.91% 88.82%);
+}
+.right{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 20px;
+    font-weight: 600;
+}
+img{
+    border-radius: 50%;
+}
+.p{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 200px;
+    left: 300px;
+    font-size: 20px;
+}
+.a{
+    padding-top: 20px;
+    width: 300px;
+}
+button{
+    position: relative;
+    top: 300px;
+    left: 300px;
+    padding: 10px 30px;
+    background-color: hsl(0deg 100% 69.61%);
+    color: white;
+}

@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.head{
+    color: white;
+    padding: 20px;
+    background-color: hsl(122.42deg 39.44% 49.22%);
+
+}
+.HASC{
+    margin-left: 1158px;
+}
+.body{
+    background-color: hsl(0deg 0% 95.69%);
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+.center{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 95%;
+}
+.body button{
+    background-color: hsl(122.42deg 39.44% 49.22%);
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    border-color: hsl(122.42deg 39.44% 49.22%);
+}
+.foot{
+    padding: 25px;
+    background-color: white;
+}
+.foot button{
+    background-color: hsl(0deg 0% 86.67%);
+    padding-left: 210px;
+    padding-right: 210px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 7px;
+    border-color:hsl(0deg 0% 86.67%); ;
+}
+.Contact{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+    background-color: hsl(0deg 0% 20%); 
+    text-align: center;
+}
+.body button:hover{
+    background-color: green;
+    cursor: pointer;
+}
+.foot button:hover{
+    background-color: gray;
+    cursor: pointer;
+}

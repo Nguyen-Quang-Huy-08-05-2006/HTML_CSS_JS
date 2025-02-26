@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // btth 1
+      let year = prompt("nhap nam sinh:");
+      let age = 2025 - year;
+      console.log("toi nam nay " + age + " tuoi");
+
+      //   btth2
+      let height = prompt("nhap chieu dai");
+      let width = prompt("nhap vao chieu rong");
+      let areal = height * width;
+      console.log(`dien tich bang ${areal}`);
+
+      //  btth3
+      let num1 = +prompt("nhap so thu nhat");
+      let num2 = +prompt("nhap so thu hai");
+      let num3 = +prompt("nhap so thu ba");
+      let avg = (num1 + num2 + num3) / 3;
+      console.log(`trung binh cong bang ${avg}`);
+
+      //btth4
+      let r = prompt("nhap ban kinh");
+      //   const PI = 3.14;
+      let perimeter = 2 * Math.PI * r;
+      let s = Math.PI * r ** 2;
+      console.log(`Dien tich bang ${s}, chu vi bang ${perimeter}`);
+    </script>
+  </body>
+</html>

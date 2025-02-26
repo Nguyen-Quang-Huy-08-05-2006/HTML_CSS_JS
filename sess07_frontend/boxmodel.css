@@ -1,0 +1,15 @@
+.container{
+    /* co 1 gia tri thi 4 goc bi anh huong */
+    /* co 2 gia tri: gtri 1 tren-duoi, gtri 2 trai-phai */
+    /* co 3 gtri: gtri 1 tran, gtri 2 trai phai, gtri 3 duoi */
+    /* co 4 gtri: theo chieu kinh dong   ho */
+    margin: 5px;
+
+    /* border-width: 5px;
+    border-style: solid;
+    border-color:red; */
+    border: 5px solid red;
+
+    padding: 10px 20px 30px 40px;
+    /* giong margin */
+}

@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+.big{
+    height: 300px;
+    border-radius: 8px;
+    position: relative;
+    top: 10px;
+}
+.avatar{
+    height: 50px;
+    border-radius: 50%;
+}
+.name{
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+}
+.a{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+p{
+    width: 450px;
+    padding-top: 20px;
+}
+h3{
+    width: 530px;
+    padding-top: 20px;
+}
+.date{
+    color: hsl(0deg 0.79% 50.2%);
+    padding-top: 20px;
+}
+.basketball{
+    position: relative;
+     bottom: 290px; 
+    color:white;
+     left: 400px; 
+    border-style: solid;
+    border-radius: 8px;
+    width: 90px;
+    padding: 5px;
+}

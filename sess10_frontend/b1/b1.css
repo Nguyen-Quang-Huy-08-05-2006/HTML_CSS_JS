@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.all{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(229 229 229);
+    padding: 20px;
+}
+.title{
+    font-weight: 700;
+    margin-left: 20px;
+}
+.blur{
+    color: rgb(131 131 131);
+}
+.home{
+    font-weight: 600;
+}
+button{
+    height: 30px;
+    width: 90px;
+    margin-right: 20px;
+    border-radius: 6px;
+    border-color: rgb(141 147 158);
+    background-color: rgb(141 147 158);
+    color: white;
+}
+button:hover{
+    background-color: gray;
+    cursor: pointer;
+}

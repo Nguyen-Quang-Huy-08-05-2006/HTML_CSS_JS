@@ -1,0 +1,32 @@
+/* CSS external */
+
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: brown;
+}
+
+#heading-3{
+    color: aqua;
+}
+/* adjacent selector */
+h1 + p {
+    color: red;
+}
+/* descendant  selector */
+.container p {
+    color: blue;
+}
+/*  */
+#list-course li:nth-child(1) {
+    color: green;
+}
+#list-course li:nth-child(2) {
+    color: rgb(176, 255, 19);
+}
+#list-course li:nth-child(3) {
+    color: rgb(221, 255, 0);
+}

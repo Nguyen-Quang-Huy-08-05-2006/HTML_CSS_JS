@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.h1{
+    color: hsl(195.48deg 43.66% 41.76%);
+}
+.p3{
+    padding: 10px;
+    font-weight: 500;
+}
+.p1{
+    padding-top:20px;
+    padding-bottom: 15px;
+    font-weight: 500;
+}
+.blockCode{
+    background-color: hsl(41.25deg 100% 96.86%);
+    border-left-width:5px ;
+    border-left-style:solid ;
+    border-left-color:hsl(56.18deg 59.14% 63.53%) ;
+}
