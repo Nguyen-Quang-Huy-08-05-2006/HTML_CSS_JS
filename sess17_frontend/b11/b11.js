@@ -1,0 +1,16 @@
+let a = Math.abs(-5.5);
+let b = Math.abs(10);
+let c = Math.ceil(4.4); 
+let d = Math.ceil(5.8); 
+let e = Math.floor(5.7); 
+let f = Math.floor(6.1); 
+let g = Math.round(10.1);
+let h = Math.round(20.6); 
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+console.log(e);
+console.log(f);
+console.log(g);
+console.log(h);

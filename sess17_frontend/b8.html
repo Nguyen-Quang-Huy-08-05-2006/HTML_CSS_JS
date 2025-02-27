@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let ngay1 = prompt("nhap vao ngay đau tien (YYYY-MM-DD):");
+      let ngay2 = prompt("nhap vao ngay thu hai (YYYY-MM-DD):");
+
+      let date1 = new Date(ngay1);
+      let date2 = new Date(ngay2);
+
+      let chenhLech = Math.abs(date2 - date1);
+      let soNgay = chenhLech / (1000 * 3600 * 24);
+
+      console.log("do lech la " + soNgay + " ngay");
+    </script>
+  </body>
+</html>
