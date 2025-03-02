@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let math = +prompt("Nhap diem mon toan: ");
+      let lec = +prompt("Nhap diem mon van: ");
+      let eng = +prompt("Nhap diem mon tieng anh: ");
+      let avg = (math + lec + eng) / 3;
+      if (avg >= 8.0) {
+        alert(`Ban duoc hoc sinh gioi`);
+      } else if (avg >= 6.5 && avg <= 7.9) {
+        alert(`Ban duoc hoc sinh kha`);
+      } else if (avg >= 5.0 && avg <= 6.4) {
+        alert(`Ban duoc hoc sinh trung binh`);
+      } else {
+        alert(`Ban duoc hoc sinh yeu`);
+      }
+    </script>
+  </body>
+</html>
