@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("nhap so thu nhat: ");
+      let b = prompt("nhap so thu hai: ");
+      let c = prompt("nhap so thu ba: ");
+      a > b && a > c
+        ? alert(`${a} la so lon nhat`)
+        : b > a && b > c
+        ? alert(`${b} la so lon nhat`)
+        : c > a && c > b
+        ? alert(`${c} la so lon nhat`)
+        : a == b && a == c
+        ? alert(`3 so bang nhau`)
+        : alert("Khong hop le");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = +prompt("Nhap vao 1 so");
+      let a = number % 10;
+      let b = Math.floor(number / 10);
+      if (((b + a) % 3 == 0 && a == 5) || ((b + a) % 3 == 0 && a == 0)) {
+        alert(`${number} chia het cho ca 3 va 5`);
+      } else {
+        alert(`${number} khong chia het cho 3 va 5`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let answer = prompt("Nhap vao loai tien te muon chuyen doi (USD/VND)");
+      if (answer == "USD" || answer == "usd") {
+        let vnd = 23000;
+        let total = 0;
+        let usd = prompt(`Nhap vao so tien muon doi`);
+        for (let i = 0; i < usd; i++) {
+          total += vnd;
+        }
+        alert(`$${usd} = ${total} VND`);
+      } else if (answer == "VND" || answer == "vnd") {
+        let usd = 0.00004348;
+        let total = 0;
+        let vnd = prompt(`Nhap vao so tien muon doi`);
+        for (let i = 0; i < vnd; i++) {
+          total += usd;
+        }
+        alert(`${vnd} VND = $${total}`);
+      }
+    </script>
+  </body>
+</html>

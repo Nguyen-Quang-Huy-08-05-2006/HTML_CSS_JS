@@ -14,7 +14,7 @@ if(delta = 0 || delta > 0){
     x = (-b + Math.sqrt(delta))/2*a;
     y = (-b - Math.sqrt(delta))/2*a;
 
-    console.log(x);
+    console.log(x); 
     console.log(y);
     
 }
