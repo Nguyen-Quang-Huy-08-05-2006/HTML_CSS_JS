@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt("Nhap 1 so nguyen");
+      let flag = 0;
+      if (isNaN(num) || +num <= 0) {
+        alert("Sai cu phap");
+      } else {
+        num = +num;
+        for (let i = 1; i <= num; i++) {
+          if (num % i == 0) {
+            flag++;
+          }
+        }
+        if (flag == 2) {
+          alert(`${num} la so nguyen`);
+        } else {
+          alert(`${num} khong phai la so nguyen`);
+        }
+      }
+    </script>
+  </body>
+</html>

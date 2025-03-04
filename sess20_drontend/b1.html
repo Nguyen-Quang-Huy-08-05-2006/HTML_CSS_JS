@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let loop = prompt("Ban muon tinh tong tu 1 den bao nhieu: ");
+      if (isNaN(loop) || +loop <= 0) {
+        alert("Sai cu phap");
+      } else {
+        loop = +loop;
+        let math = 0;
+        for (let i = 1; i <= loop; i++) {
+          math += i;
+        }
+        alert(`Tong cac so tu 1 den ${loop} = ${math}`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("Nhap vao a");
+      if (isNaN(a) || +a <= 0) {
+        alert("Sai cu phap");
+      } else {
+        a = +a;
+        let b = prompt("Nhap vao b");
+        if (isNaN(b) || +b <= 0) {
+          alert("Sai cu phap");
+        } else {
+          let c = 2;
+          for (let i = 1; i < b; i++) {
+            c *= a;
+          }
+          alert(`${a}^${b}=${c}`);
+        }
+      }
+    </script>
+  </body>
+</html>
