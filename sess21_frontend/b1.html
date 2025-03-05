@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const num = [];
+      const odd = [];
+      let a = 0;
+      for (let i = 0; i < 5; i++) {
+        a = prompt(`Nhap vao so nguyen thu ${i + 1}`);
+        if (isNaN(a) || +a <= 0) {
+          alert("Sai cu phap");
+        } else {
+          a = +a;
+          num.push(a);
+        }
+      }
+      for (let i = 0; i < 5; i++) {
+        if (num[i] % 2 != 0) {
+          odd.push(num[i]);
+        }
+      }
+      let b = 0;
+      for (let i = 0; i < odd.length; i++) {
+        b += odd[i];
+      }
+      alert(`Tong cac so le la ${b}`);
+    </script>
+  </body>
+</html>

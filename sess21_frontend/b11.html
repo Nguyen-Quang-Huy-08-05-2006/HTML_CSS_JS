@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let days = +prompt("Nhap ngay sinh cua ban");
+      let months = +prompt("Nhap vao thang sinh cua ban");
+      switch (months) {
+        case 1:
+          if (days <= 19 && days > 0) {
+            alert(`Ban la Ma Ket`);
+          } else if (days >= 20 && days <= 31) {
+            alert(`Ban la Bao binh`);
+          } else {
+            alert("Ngay sinh khong hop le!");
+          }
+          break;
+        case 2:
+          if (days <= 18 && days > 0) {
+            alert(`Ban la Bao Binh`);
+          } else if (days >= 20 && days <= 29) {
+            alert(`Ban la Song Ngu`);
+          }
+          break;
+        case 3:
+          if (days <= 20 && days > 0) {
+            alert(`Ban la Song Ngu`);
+          } else if (days >= 21 && days <= 31) {
+            alert(`Ban la Bach Duong`);
+          }
+          break;
+        case 4:
+          if (days <= 21 && days > 0) {
+            alert(`Ban la Bach Duong`);
+          } else if (days >= 21 && days <= 30) {
+            alert(`Ban la Kim Nguu`);
+          }
+          break;
+        case 5:
+          if (days <= 20 && days > 0) {
+            alert(`Ban la Kim Nguu`);
+          } else if (days >= 21 && days <= 31) {
+            alert(`Ban la Song Tu`);
+          }
+          break;
+        case 6:
+          if (days <= 21 && days > 0) {
+            alert(`Ban la Song Tu`);
+          } else if (days >= 22 && days <= 30) {
+            alert(`Ban la Cu Giai`);
+          }
+          break;
+        case 7:
+          if (days <= 22 && days > 0) {
+            alert(`Ban la Cu giai`);
+          } else if (days >= 23 && days <= 31) {
+            alert(`Ban la Su Tu`);
+          }
+          break;
+        case 8:
+          if (days <= 22 && days > 0) {
+            alert(`Ban la Su Tu`);
+          } else if (days >= 23 && days <= 31) {
+            alert(`Ban la Xu Nu`);
+          }
+          break;
+        case 9:
+          if (days <= 22 && days > 0) {
+            alert(`Ban la Xu Nu`);
+          } else if (days >= 23 && days <= 30) {
+            alert(`Ban la Thien Binh`);
+          }
+          break;
+        case 10:
+          if (days <= 23 && days > 0) {
+            alert(`Ban la Thien Binh`);
+          } else if (days >= 25 && days <= 31) {
+            alert(`Ban la Bo Cap`);
+          }
+          break;
+        case 11:
+          if (days <= 22 && days > 0) {
+            alert(`Ban la Bo Cap`);
+          } else if (days >= 23 && days <= 30) {
+            alert(`Ban la Nhan Ma`);
+          }
+          break;
+        case 12:
+          if (days <= 21 && days > 0) {
+            alert(`Ban la Nhan Ma`);
+          } else if (days >= 22 && days <= 31) {
+            alert(`Ban la Ma Ket`);
+          }
+          break;
+        default:
+          alert(`Thang sinh khong hop le!`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let invest = +prompt("Nhap vao so tien gui:");
+      let income = +prompt("Nhap vao so % lai:");
+      let months = +prompt("Nhap vao so thang gui");
+      for (let i = 0; i < months; i++) {
+        invest += invest * (income / 100);
+      }
+      let final = invest;
+      alert(
+        `So tien lai sau ${months} thang la ${invest} va tat ca so tien ban nhan duoc la ${final}`
+      );
+    </script>
+  </body>
+</html>

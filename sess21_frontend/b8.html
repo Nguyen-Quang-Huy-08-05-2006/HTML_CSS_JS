@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let i = 100;
+      while (i <= 999) {
+        let c = i % 10;
+        let a = Math.floor(i / 100);
+        let b = Math.floor(i / 10) - a * 10;
+        if (a ** 3 + b ** 3 + c ** 3 == i) {
+          console.log(i);
+        }
+        i++;
+      }
+    </script>
+  </body>
+</html>

@@ -7,17 +7,22 @@
   </head>
   <body>
     <script>
-      const carts = [15000, 20000, 30000, 40000];
-      let math = 0;
-      for (let i = 0; i < carts.length; i++) {
-        math += carts[i];
+      let n = Number(prompt("Nhập số"));
+      let count = 0;
+      if (!isNaN(n) && Math.sign(n) !== -1) {
+        for (let i = 2; i <= n; i++) {
+          if (n % i == 0) {
+            count++;
+          }
+        }
+        if (count == 1) {
+          console.log("Là số nguyên tố");
+        } else {
+          console.log("Không phải số nguyên tố");
+        }
+      } else {
+        console.log("Dữ liệu nhập vào không hợp lệ");
       }
-      alert(
-        `Tong bang ${math.toLocaleString("vi", {
-          style: "currency",
-          currency: "VND",
-        })}`
-      );
     </script>
   </body>
 </html>
