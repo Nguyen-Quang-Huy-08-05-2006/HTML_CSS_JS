@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [9, 2, 6, 8, 5];
+      let even = 0;
+      let odd = 0;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 == 0) {
+          even += array[i];
+        } else {
+          odd += array[i];
+        }
+      }
+      console.log("Tong so chan la: " + even);
+      console.log("Tong so le la: " + odd);
+    </script>
+  </body>
+</html>

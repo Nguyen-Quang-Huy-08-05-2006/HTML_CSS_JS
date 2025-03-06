@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      let final = [];
+      let nums = prompt("Nhap vap day so bat ky");
+      if (isNaN(nums) || +nums <= 0) {
+        alert("Sai cu phap");
+      } else {
+        numbers = nums.split("").map(Number);
+        let reversedNumbers = [];
+        for (let i = numbers.length - 1; i >= 0; i--) {
+          reversedNumbers.push(numbers[i]);
+        }
+        console.log("Mảng sau khi đảo ngược:", reversedNumbers);
+        alert("Mảng sau khi đảo ngược: " + reversedNumbers);
+      }
+    </script>
+  </body>
+</html>

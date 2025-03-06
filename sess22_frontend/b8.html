@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [2, 5, 7, 4, 1, 8, 6, 2, 5, 7];
+      let arr = [];
+      let max = 0;
+
+      for (let i = 0; i < numbers.length; i++) {
+        let count = 0;
+        for (let j = 0; j < numbers.length; j++) {
+          if (numbers[i] == numbers[j]) {
+            count++;
+          }
+        }
+        if (count > max) {
+          max = count;
+          arr = [numbers[i]];
+        } else if (count == max && !arr.includes(numbers[i])) {
+          arr.push(numbers[i]);
+        }
+      }
+      arr.sort();
+      let minValue = arr[0];
+      console.log("Số xuất hiện nhiều nhất là: " + minValue);
+    </script>
+  </body>
+</html>

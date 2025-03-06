@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      let nums = prompt("Nhap vap day so bat ky");
+      if (isNaN(nums) || +nums <= 0) {
+        alert("Sai cu phap");
+      } else {
+        numbers = nums.split("").map(Number);
+        let maxnumber = numbers[0];
+        for (let i = 1; i < numbers.length; i++) {
+          if (numbers[i] > maxNumber) {
+            maxNumber = numbers[i];
+          }
+        }
+        console.log("Giá trị lớn nhất trong mảng:", maxnumbers);
+      }
+    </script>
+  </body>
+</html>

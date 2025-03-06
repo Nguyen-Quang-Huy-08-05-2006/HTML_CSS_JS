@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [2, 5, 7, 4, 1, 8, 6, 2, 5, 7];
+      let inputUser = prompt("Nhap vao mot so de kiem tra");
+      let count = 0;
+      let flag = 1;
+      for (let i = 0; i < numbers.length; i++) {
+        if (inputUser == numbers[i]) {
+          count++;
+          flag = 0;
+        }
+      }
+      if (flag == 0) {
+        console.log(inputUser + " xuat hien " + count + " lan");
+      } else {
+        console.log(inputUser + " khong ton tai trong mang");
+      }
+    </script>
+  </body>
+</html>
