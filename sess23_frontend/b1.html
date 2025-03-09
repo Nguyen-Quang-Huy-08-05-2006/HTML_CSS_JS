@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = [];
+      let size = +prompt("Ban muon mang co bao nhieu phan tu");
+      if (isNaN(size) || +size <= 0) {
+        alert("Sai cu phap");
+      } else {
+        for (i = 0; i < size; i++) {
+          let a = prompt(`Nhap vao phan tu thu ${i + 1}`);
+          num.push(a);
+        }
+        let flag = 0;
+        let temp = [];
+        for (i = 0; i < num.length; i++) {
+          if (num[i] >= 10) {
+            temp.push(num[i]);
+            flag++;
+          }
+        }
+        if (flag == 0) {
+          alert("Khong co so nao lon hon 10");
+        } else {
+          for (i = 0; i < temp.length; i++) {
+            document.write(temp[i]);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

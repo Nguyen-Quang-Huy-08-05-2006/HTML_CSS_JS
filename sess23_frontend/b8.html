@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = Number(prompt("Nhập số phần tử muốn thêm vào mảng"));
+      let numbers = [];
+      let flag = 0;
+      let input;
+      if (n < 0) {
+        console.log("Số phần tử không được nhỏ hơn 0");
+      } else if (n <= 2) {
+        console.log("Không phải dãy Fibonacci");
+      } else {
+        for (let i = 0; i < n; i++) {
+          input = Number(prompt(`Nhap vao phan tu thu ${i + 1}`));
+          numbers.push(input);
+        }
+        let isFibo = true;
+
+        for (let i = 2; i < n; i++) {
+          if (numbers[i] !== numbers[i - 1] + numbers[i - 2]) {
+            isFibo = false;
+            break;
+          }
+        }
+        if (isFibo) {
+          console.log("Là dãy fibo");
+        } else {
+          console.log("Không phải dãy fibo");
+        }
+      }
+    </script>
+  </body>
+</html>

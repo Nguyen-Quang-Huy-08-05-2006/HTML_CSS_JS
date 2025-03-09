@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = Number(prompt("Nhập số phần tử muốn thêm vào mảng"));
+      let numbers = [];
+      let flag = 0;
+      let max = 0;
+      let secondMax = 0;
+      let input;
+      if (n < 0) {
+        console.log("Số phần tử không được nhỏ hơn 0");
+      } else if (n == 0) {
+        console.log("Không có phần tử");
+      } else {
+        for (let i = 0; i < n; i++) {
+          input = Number(prompt("Nhập phần tử"));
+          numbers.push(input);
+          numbers[i] = Number(numbers[i]);
+
+          if (numbers[i] > max) {
+            max = numbers[i];
+          }
+        }
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] < max) {
+            if (secondMax < numbers[i]) {
+              secondMax = numbers[i];
+            }
+          }
+        }
+      }
+
+      console.log(secondMax);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      let n = +prompt("Ban muon mang co bao nhieu phan tu");
+      if (isNaN(n)) {
+        alert("Sai cu phap");
+      } else {
+        for (i = 0; i < n; i++) {
+          let a = prompt(`Nhap vao phan tu thu ${i + 1}`);
+          numbers.push(a);
+        }
+        let flag = 0;
+        for (i = 0; i < n; i++) {
+          if (numbers[i] < 0) {
+            flag++;
+          }
+        }
+        alert(`Co tat ca ${flag} so nguyen am`);
+      }
+    </script>
+  </body>
+</html>

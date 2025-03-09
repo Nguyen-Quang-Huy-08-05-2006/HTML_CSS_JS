@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      let n = +prompt("Ban muon mang co bao nhieu phan tu");
+      for (i = 0; i < n; i++) {
+        let a = +prompt(`Nhap vao phan tu thu ${i + 1}`);
+        numbers.push(a);
+      }
+      for (i = 0; i < n; i++) {
+        if (isNaN(numbers[i])) {
+          numbers.splice(i, 1);
+        }
+      }
+      for (i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);
+      }
+    </script>
+  </body>
+</html>

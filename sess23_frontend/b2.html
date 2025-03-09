@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      let max = 0;
+      let pos = 0;
+      let size = +prompt("Ban muon mang co bao nhieu phan tu");
+      if (isNaN(size) || +size <= 0) {
+        alert("Sai cu phap");
+      } else {
+        for (i = 0; i < size; i++) {
+          let a = prompt(`Nhap vao phan tu thu ${i + 1}`);
+          numbers.push(a);
+        }
+        for (i = 0; i < numbers.length; i++) {
+          for (j = 0; j < numbers.length; j++) {
+            if (numbers[i] > numbers[j + 1]) {
+              max = numbers[i];
+              pos = i;
+            } else if (numbers[i] < numbers[j + 1]) {
+              max = numbers[j];
+              pos = j;
+            }
+          }
+        }
+        alert(`So lon nhat: ${max} Vi tri: ${pos}`);
+      }
+    </script>
+  </body>
+</html>
