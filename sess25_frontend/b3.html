@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      const insertArr = (numbersIndex) => {
+        let nums = [];
+        for (let i = 0; i < numbersIndex; i++) {
+          let a = +prompt(`Nhap vao so thu ${i + 1}`);
+          if (isNaN(a)) {
+            return "Gia tri khong hop le";
+          }
+          nums.push(a);
+        }
+        return nums;
+      };
+
+      const evenNum = (numbers) => {
+        let even = [];
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] % 2 == 0) {
+            even.push(numbers[i]);
+          }
+        }
+        return even;
+      };
+      let n = +prompt("Ban muon mang co bao nhieu phan tu:");
+      if (isNaN(n) || n <= 0) {
+        alert("So luong phan tu khong hop le.");
+      } else {
+        numbers = insertArr(n);
+        let even = evenNum(numbers);
+        if (even.length == 0) {
+          alert("Mang khong co so chan");
+        } else {
+          alert(even);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -43,7 +43,7 @@ do{
                     if (numbers[i][j] > max) {
                         max = numbers[i][j];
                         maxRow = i;
-                        maxCol = j;
+                        maxCol = j; 
                     }
                 }
             }

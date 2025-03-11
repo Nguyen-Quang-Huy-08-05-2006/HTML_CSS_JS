@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const isPalin = (string) => {
+        if (isPalindrome(string)) {
+          return "La chuoi doi xung";
+        } else {
+          return "Khong la chuoi doi xung";
+        }
+      };
+
+      let str = prompt("Nhap vao chuoi ky tu");
+      let a = isPalin(str);
+      alert(a);
+    </script>
+  </body>
+</html>

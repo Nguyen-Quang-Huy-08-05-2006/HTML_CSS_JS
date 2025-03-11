@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      const insertArr = (numbersIndex) => {
+        let nums = [];
+        for (let i = 0; i < numbersIndex; i++) {
+          let a = +prompt(`Nhap vao so thu ${i + 1}`);
+          if (isNaN(a)) {
+            return "Gia tri khong hop le";
+          }
+          nums.push(a);
+        }
+        return nums;
+      };
+
+      const findMin = (numbers) => {
+        let temp = numbers[0];
+        for (let i = 1; i < numbers.length; i++) {
+          if (temp > numbers[i]) {
+            temp = numbers[i];
+          }
+        }
+        return temp;
+      };
+
+      let n = +prompt("Ban muon mang co bao nhieu phan tu:");
+      if (isNaN(n) || n <= 0) {
+        alert("So luong phan tu khong hop le.");
+      } else {
+        numbers = insertArr(n);
+        let min = findMin(numbers);
+        alert(`Phan tu nho nhat trong mang = ${min}`);
+      }
+    </script>
+  </body>
+</html>

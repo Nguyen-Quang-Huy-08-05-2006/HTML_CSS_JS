@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const carts = [];
+      const addPrice = (price) => {
+        carts.push(price);
+        return carts;
+      };
+
+      const updatePrice = (index, newPrice) => {
+        carts[index] = newPrice;
+        return carts;
+      };
+
+      const removePrice = (index) => {
+        if (index < 0 || index > carts.length) {
+          return "Vi tri khong phu hop";
+        }
+        carts.splice(index, 1);
+        return carts;
+      };
+
+      const totalAmount = () => {
+        let total = 0;
+        for (let i = 0; i < carts.length; i++) {
+          total += carts[i];
+        }
+        return total;
+      };
+
+      const resultAdd1 = addPrice(17000);
+      const resultAdd2 = addPrice(25000);
+      const resultAdd3 = addPrice(32000);
+      const resultAdd4 = addPrice(90000);
+      const resultAdd5 = addPrice(43000);
+      console.log("resultAdd3", resultAdd3);
+
+      const resultUpd1 = updatePrice(0, 40000);
+      console.log("updatePrice1", resultUpd1);
+
+      const delete1 = removePrice(2);
+      console.log("removePrice1", delete1);
+
+      const total = totalAmount();
+      console.log("totalAmount", total);
+    </script>
+  </body>
+</html>
