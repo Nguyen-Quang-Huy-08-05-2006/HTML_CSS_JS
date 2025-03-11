@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isStrongPassword(password) {
+        return (
+          password.length >= 8 &&
+          /[A-Z]/.test(password) &&
+          /[a-z]/.test(password) &&
+          /\d/.test(password)
+        );
+      }
+
+      console.log(isStrongPassword("Abc123!@"));
+      console.log(isStrongPassword("weakpass"));
+    </script>
+  </body>
+</html>
