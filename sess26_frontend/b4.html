@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      function checkPrime(num) {
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i == 0) return false;
+        }
+        return true;
+      }
+      function filterPrime(nums) {
+        return arr.filter(checkPrime);
+      }
+      for (let i = 0; i < 10; i++) {
+        numbers[0] = prompt(`Nhap vao so nguyen thu %{i+1}`);
+      }
+      const final = filterPrime(nums);
+      alert(`[${final}]`);
+    </script>
+  </body>
+</html>

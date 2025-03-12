@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkEven(arr) {
+        const square = arr.map((value) => value ** 2);
+        const evenSquare = square.filter((value) => value % 2 == 0);
+        return `So chẵn khi bình phương các phần tử trong mảng là: ${evenSquare}`;
+      }
+      let arr = [];
+      for (let i = 0; i < 10; i++) {
+        let input = Number(prompt(`Nhập phần tử thứ ${i + 1}:`));
+        arr.push(input);
+        if (arr.some((item) => isNaN(item) || typeof item !== "number")) {
+          console.log("Dữ liệu không hợp lệ");
+        } else if (arr.length === 0) {
+          console.log("Mảng rỗng");
+        }
+      }
+      console.log(checkEven(arr));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      function findMax(numbers) {
+        return Math.max(...numbers);
+      }
+      function maxIndex(numbers, findMax) {
+        return numbers.indexOf(findMax);
+      }
+      for (let i = 0; i < 5; i++) {
+        numbers[i] = +prompt(`Nhap vao so thu ${i + 1}`);
+      }
+      const final = findMax(numbers);
+      const index = maxIndex(numbers, final);
+      alert(`So lon nhat = ${final} nam o vi tri ${index}`);
+    </script>
+  </body>
+</html>

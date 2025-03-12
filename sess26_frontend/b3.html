@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let mail = [];
+      function validMail(email) {
+        return email.includes("@") && email.includes(" ");
+      }
+      function filterMail(list) {
+        return list.filter(validMail);
+      }
+      for (let i = 0; i < 5; i++) {
+        mail[i] = prompt(`Nhap vao email thu ${i + 1}`);
+      }
+      const final = filterMail(list);
+      alert(`[${final}]`);
+    </script>
+  </body>
+</html>

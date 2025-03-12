@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [];
+      for (let i = 0; i < 10; i++) {
+        let a = +prompt(`Nhap vao so nguyen thu ${i + 1}`);
+        if (isNaN(a)) {
+          alert("Gia tri khong hop le");
+        } else {
+          numbers.push(a);
+        }
+      }
+      function check(number) {
+        if (number.length == 0) {
+          return "Mang khong co Phan tu";
+        }
+        return number > 10;
+      }
+      const bigNum = numbers.filter(check);
+      alert(`[${bigNum}]`);
+    </script>
+  </body>
+</html>
