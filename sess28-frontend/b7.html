@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let students = [
+        {
+          name: "Trần Trí Dương",
+          points: { math: 9, english: 8, literature: 7 },
+        },
+        {
+          name: "Hà Bích Ngọc",
+          points: { math: 3, english: 2, literature: 5 },
+        },
+        {
+          name: "Bùi Thái Sơn",
+          points: { math: 9.5, english: 9, literature: 9 },
+        },
+      ];
+      const excellent = students
+        .map((students) => ({
+          name: students.name,
+          avg:
+            (students.points.math +
+              students.points.english +
+              students.points.literature) /
+            3,
+        }))
+        .filter((students) => students.avg >= 8);
+
+      console.log(excellent);
+    </script>
+  </body>
+</html>

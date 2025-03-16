@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let products = [];
+      let index = 0;
+      let answer;
+      let end = false;
+      do {
+        answer = +prompt(
+          "1. Thêm sản phẩm\n2. Sửa thông tin sản phẩm\n3. Xóa sản phẩm theo id\n4. In danh sách sản phẩm\n5. Tìm kiếm sản phẩm theo tên\n6.Thoát chương trình  \nCâu trả lời của bạn:"
+        );
+        if (isNaN(answer) || answer < 1 || answer > 7) {
+          alert("Sai cu phap");
+          continue;
+        }
+        switch (answer) {
+          case 1:
+            const productName = prompt("Nhap ten san pham");
+            const productprice = prompt("Nhap gia san pham");
+
+            //gom nhom du lieu tu nguoi dung thanh 1 obj duy nhat
+            const newProduct = {
+              id: Math.ceil(Math.random() * 1000000),
+              productName: productName,
+              productprice: productprice,
+            };
+
+            //Push doi tuong vao trong mang
+            products.push(newProduct);
+
+            break;
+          case 2:
+            const idUpdate = +prompt("Nhap id san pham can sua");
+            const findIndexUpdate = products.findIndex(
+              (product) => product.id === idUpdate
+            );
+            if (findIndexUpdate !== -1) {
+              const newName = prompt("Nhap ten sp moi");
+              const newPrice = +prompt("Nhap gia sp moi");
+
+              products[findIndexUpdate].productName = newName;
+              products[findIndexUpdate].productprice = newPrice;
+            } else {
+              alert("Khong tim thay sp");
+              break;
+            }
+            break;
+          case 3:
+            const idDelete = +prompt("Nhap id can xoa");
+            const findIndexDelete = products.findIndex(
+              (product) => product.id === idDelete
+            );
+            if (findIndexDelete !== -1) {
+              const confirmDelete = confirm("Ban co muon xoa san pham khong?");
+              if (confirmDelete == true) {
+                products.splice(findIndexDelete, 1);
+              }
+            }
+            break;
+          case 4:
+            console.table(products);
+            break;
+          case 5:
+            const productNameInputSearch = prompt("Nhap ten sp can tim kiem");
+
+            const findProductName = products.find(
+              (product) => product.productName === productNameInputSearch
+            );
+            if (findProductName) {
+              console.log("Tim thay san pham", findProductName);
+            } else {
+              console.log("khong tim thay sp");
+            }
+            break;
+          case 6:
+            alert("Thoát chương trình.");
+            end = true;
+            break;
+        }
+      } while (!end);
+    </script>
+  </body>
+</html>
