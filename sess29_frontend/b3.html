@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let menu = [];
+      function addDish() {
+        let category = prompt("Nhập danh mục món ăn:");
+        let name = prompt("Nhập tên món ăn:");
+        let price = +prompt("Nhập giá món ăn:");
+        let description = prompt("Nhập mô tả món ăn:");
+
+        let dish = { category, name, price, description };
+        menu.push(dish);
+      }
+      function removeDish() {
+        let name = prompt("Nhập tên món ăn cần xoá:");
+        let index = menu.findIndex((d) => d.name === name);
+        if (index !== -1) {
+          menu.splice(index, 1);
+          alert("Xóa thành công!");
+        } else {
+          alert("Món ăn không tồn tại!");
+        }
+      }
+      function updateDish() {
+        let name = prompt("Nhập tên món ăn cần cập nhật:");
+        let dish = menu.find((d) => d.name === name);
+        if (dish) {
+          dish.name = prompt("Nhập tên mới:") || dish.name;
+          dish.price = +prompt("Nhập giá mới:") || dish.price;
+          dish.description = prompt("Nhập mô tả mới:") || dish.description;
+          alert("Cập nhật thành công!");
+        } else {
+          alert("Món ăn không tồn tại!");
+        }
+      }
+      function showMenu() {
+        console.table(menu);
+      }
+      function searchDish() {
+        let name = prompt("Nhập tên món ăn cần tìm:");
+        let found = menu.filter((d) => d.name.includes(name));
+        console.table(found);
+      }
+      let end = false;
+      do {
+        let choice = +prompt(
+          "1. Thêm món ăn vào danh mục.\n" +
+            "2. Xóa món ăn theo tên.\n" +
+            "3. Cập nhật thông tin món ăn.\n" +
+            "4. Hiển thị toàn bộ menu.\n" +
+            "5. Tìm kiếm món ăn theo tên.\n" +
+            "6. Thoát.\n" +
+            "Nhập lựa chọn của bạn:"
+        );
+        switch (choice) {
+          case 1:
+            addDish();
+            break;
+          case 2:
+            removeDish();
+            break;
+          case 3:
+            updateDish();
+            break;
+          case 4:
+            showMenu();
+            break;
+          case 5:
+            searchDish();
+            break;
+          case 6:
+            end = true;
+            alert("Thoát chương trình.");
+            break;
+          default:
+            alert("Lựa chọn không hợp lệ!");
+        }
+      } while (!end);
+    </script>
+  </body>
+</html>

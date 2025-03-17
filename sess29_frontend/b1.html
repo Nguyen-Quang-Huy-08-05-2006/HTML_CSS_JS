@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findContact() {
+        let findPhone = prompt("Nhap vao so dien thoai can tim");
+        for (i = 0; i < users.length; i++) {
+          for (let i = 0; i < users.length; i++) {
+            if (users[i].Number === findPhone) {
+              console.table(users[i]);
+              found = true;
+              break;
+            }
+          }
+          if (!found) {
+            alert("So dien thoai khong ton tai");
+          }
+        }
+      }
+      function fixById() {
+        let findId = +prompt("Nhap id can tim");
+        for (let i = 0; i < users.length; i++) {
+          if (users[i].id === findId) {
+            users[i].name = prompt("Nhap vao ten moi");
+            users[i].email = prompt("Nhap vao email moi");
+            users[i].Number = prompt("Nhap vao sdt moi");
+            let found = true;
+            break;
+          }
+        }
+        if (!found) {
+          alert("Id khong ton tai");
+        }
+      }
+      function deleteUser() {
+        let findId = +prompt("Nhap id can tim");
+        for (let i = 0; i < users.length; i++) {
+          if (users[i].id === findId) {
+            const confirmDelete = confirm("Ban co muon xoa san pham khong?");
+            if (confirmDelete == true) {
+              users.splice(i, 1);
+            }
+            let found = true;
+            break;
+          }
+        }
+        if (!found) {
+          alert("Id khong ton tai");
+        }
+      }
+      let users = [];
+      let answer;
+      let end = false;
+      do {
+        answer = +prompt(
+          "1.Thêm đối tượng Contact vào danh sách liên hệ.\n2.Hiển thị danh sách danh bạ.\n3.Tìm kiếm thông tin Contact theo số điện thoại.\n4.Cập nhật thông tin Contact(name, email, phone) theo id.\n5.Xóa một đối tượng Contact  khỏi danh sách danh bạ theo id.\n6.Thoát.  \nCâu trả lời của bạn:"
+        );
+        if (isNaN(answer) || answer < 1 || answer > 6) {
+          alert("Sai cu phap");
+          continue;
+        }
+        switch (answer) {
+          case 1:
+            const newUserId = +prompt("Nhap vao id nguoi lien he ");
+            for (i = 0; i < users.length; i++) {
+              if (newUserId == users[i].id) {
+                alert("Id da ton tai");
+                continue;
+              }
+            }
+            const newUserName = prompt("Nhap vao ten nguoi lien he:");
+            const userMail = prompt("Nhap vao email:");
+            if (!userMail.includes("@")) {
+              alert("Sai cu phap ");
+              continue;
+            }
+            const newPhoneNumber = prompt(
+              "Nhap vao so dien thoai nguoi lien he"
+            );
+            const newUser = {
+              id: newUserId,
+              name: newUserName,
+              email: userMail,
+              Number: newPhoneNumber,
+            };
+            users.push(newUser);
+            break;
+          case 2:
+            console.table(users);
+            break;
+          case 3:
+            findContact();
+            break;
+          case 4:
+            fixById();
+            break;
+          case 5:
+            deleteUser();
+            break;
+          case 6:
+            alert("Thoát chương trình.");
+            end = true;
+            break;
+        }
+      } while (!end);
+    </script>
+  </body>
+</html>

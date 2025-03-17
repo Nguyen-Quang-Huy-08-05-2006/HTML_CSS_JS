@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findProductById() {
+        let findId = +prompt("Nhập ID sản phẩm cần tìm:");
+        let found = false;
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].id === findId) {
+            console.table(products[i]);
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          alert("ID sản phẩm không tồn tại");
+        }
+      }
+      function updateProductById() {
+        let findId = +prompt("Nhập ID sản phẩm cần cập nhật:");
+        let found = false;
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].id === findId) {
+            products[i].name = prompt("Nhập tên mới:");
+            products[i].price = +prompt("Nhập giá mới:");
+            products[i].category = prompt("Nhập danh mục mới:");
+            products[i].quantity = +prompt("Nhập số lượng mới:");
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          alert("ID sản phẩm không tồn tại");
+        }
+      }
+      function deleteProduct() {
+        let findId = +prompt("Nhập ID sản phẩm cần xóa:");
+        let found = false;
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].id === findId) {
+            const confirmDelete = confirm(
+              "Bạn có chắc muốn xóa sản phẩm không?"
+            );
+            if (confirmDelete) {
+              products.splice(i, 1);
+            }
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          alert("ID sản phẩm không tồn tại");
+        }
+      }
+      let products = [];
+      let answer;
+      let end = false;
+      do {
+        answer = +prompt(
+          "1. Thêm sản phẩm.\n" +
+            "2. Hiển thị danh sách sản phẩm.\n" +
+            "3. Tìm kiếm sản phẩm theo ID.\n" +
+            "4. Cập nhật sản phẩm theo ID.\n" +
+            "5. Xóa sản phẩm theo ID.\n" +
+            "6. Thoát.\n" +
+            "Câu trả lời của bạn:"
+        );
+        if (isNaN(answer) || answer < 1 || answer > 6) {
+          alert("Sai cú pháp");
+          continue;
+        }
+        switch (answer) {
+          case 1:
+            const newProductId = +prompt("Nhập ID sản phẩm:");
+            for (let i = 0; i < products.length; i++) {
+              if (newProductId === products[i].id) {
+                alert("ID đã tồn tại");
+                continue;
+              }
+            }
+            const newProductName = prompt("Nhập tên sản phẩm:");
+            const newProductPrice = +prompt("Nhập giá sản phẩm:");
+            const newProductCategory = prompt("Nhập danh mục sản phẩm:");
+            const newProductQuantity = +prompt("Nhập số lượng sản phẩm:");
+            const newProduct = {
+              id: newProductId,
+              name: newProductName,
+              price: newProductPrice,
+              category: newProductCategory,
+              quantity: newProductQuantity,
+            };
+            products.push(newProduct);
+            break;
+          case 2:
+            console.table(products);
+            break;
+          case 3:
+            findProductById();
+            break;
+          case 4:
+            updateProductById();
+            break;
+          case 5:
+            deleteProduct();
+            break;
+          case 6:
+            alert("Thoát chương trình.");
+            end = true;
+            break;
+        }
+      } while (!end);
+    </script>
+  </body>
+</html>
