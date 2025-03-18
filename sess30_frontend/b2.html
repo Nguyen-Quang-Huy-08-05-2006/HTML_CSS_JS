@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quan ly sach</title>
+  </head>
+  <body>
+    <script>
+      let books = [];
+      let cart = [];
+      function addBook() {
+        let id = books.length + 1;
+        let name = prompt("Nhap ten sach:");
+        let price = +prompt("Nhap gia sach:");
+        let quantity = +prompt("Nhap so luong:");
+        let category = prompt("Nhap the loai:");
+
+        if (!name || isNaN(price) || isNaN(quantity) || !category) {
+          alert("Nhap thong tin khong hop le.");
+          return;
+        }
+        books.push({ id, name, price, quantity, category });
+        alert("Them sach thanh cong!");
+      }
+      function showBooksByCategory() {
+        if (books.length === 0) {
+          alert("Kho sach hien dang trong. Vui long them sach truoc.");
+          return;
+        }
+        let categories = [...new Set(books.map((book) => book.category))];
+        let category = prompt(`Chon the loai (${categories.join(", ")}):`);
+        let filteredBooks = books.filter(
+          (book) => book.category.toLowerCase() === category.toLowerCase()
+        );
+        if (filteredBooks.length === 0) {
+          alert("The loai khong ton tai.");
+          return;
+        }
+        console.log(`Danh muc: ${category}`);
+        console.table(filteredBooks);
+      }
+      function searchBook() {
+        if (books.length === 0) {
+          alert("Kho sach trong. Vui long them sach truoc.");
+          return;
+        }
+        let keyword = prompt("Nhap ten hoac ID sach:");
+        let result = books.filter(
+          (book) =>
+            book.name.toLowerCase().includes(keyword.toLowerCase()) ||
+            book.id == keyword
+        );
+        if (result.length === 0) {
+          alert("Khong tim thay sach.");
+          return;
+        }
+        console.table(result);
+      }
+      function buyBook() {
+        if (books.length === 0) {
+          alert("Kho sach trong. Vui long them sach truoc.");
+          return;
+        }
+        let bookId = +prompt("Nhap ID sach muon mua:");
+        let book = books.find((b) => b.id === bookId);
+
+        if (!book) {
+          alert("Sach khong ton tai.");
+          return;
+        }
+        let quantity = +prompt(
+          `Nhap so luong can mua (Con lai: ${book.quantity}):`
+        );
+        if (quantity <= 0 || isNaN(quantity) || quantity > book.quantity) {
+          alert("So luong khong hop le.");
+          return;
+        }
+        book.quantity -= quantity;
+        let cartItem = cart.find((item) => item.id === bookId);
+        if (cartItem) {
+          cartItem.quantity += quantity;
+        } else {
+          cart.push({
+            id: book.id,
+            name: book.name,
+            price: book.price,
+            quantity: quantity,
+          });
+        }
+        alert("Da them vao gio hang!");
+      }
+      function sortBooks() {
+        if (books.length === 0) {
+          alert("Kho sach trong. Vui long them sach truoc.");
+          return;
+        }
+        let order = +prompt("Sap xep theo gia:\n1. Tang dan\n2. Giam dan");
+        if (order === 1) {
+          books.sort((a, b) => a.price - b.price);
+        } else if (order === 2) {
+          books.sort((a, b) => b.price - a.price);
+        } else {
+          alert("Lua chon khong hop le.");
+          return;
+        }
+        console.table(books);
+      }
+      function calculateTotal() {
+        if (cart.length === 0) {
+          alert("Gio hang trong.");
+          return;
+        }
+        let total = cart.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+        console.log("Gio hang cua ban:");
+        console.table(cart);
+        alert(`Tong so tien: ${total.toLocaleString()} VND`);
+      }
+      function showTotalStock() {
+        if (books.length === 0) {
+          alert("Kho sach trong.");
+          return;
+        }
+        let totalBooks = books.reduce((sum, book) => sum + book.quantity, 0);
+        alert(`Tong so sach trong kho: ${totalBooks}`);
+      }
+      let answer;
+      let end = false;
+      do {
+        answer = +prompt(
+          "1. Them sach vao kho\n" +
+            "2. Hien thi sach theo the loai\n" +
+            "3. Tim kiem sach\n" +
+            "4. Mua sach\n" +
+            "5. Sap xep theo gia\n" +
+            "6. Tinh tong tien trong gio hang\n" +
+            "7. Hien thi tong so sach trong kho\n" +
+            "8. Thoat\nCau tra loi:"
+        );
+        if (isNaN(answer) || answer < 1 || answer > 8) {
+          alert("Lua chon khong hop le.");
+          continue;
+        }
+        switch (answer) {
+          case 1:
+            addBook();
+            break;
+          case 2:
+            showBooksByCategory();
+            break;
+          case 3:
+            searchBook();
+            break;
+          case 4:
+            buyBook();
+            break;
+          case 5:
+            sortBooks();
+            break;
+          case 6:
+            calculateTotal();
+            break;
+          case 7:
+            showTotalStock();
+            break;
+          case 8:
+            alert("Thoat chuong trinh.");
+            end = true;
+            break;
+        }
+      } while (!end);
+    </script>
+  </body>
+</html>

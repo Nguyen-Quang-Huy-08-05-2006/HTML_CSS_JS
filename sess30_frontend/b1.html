@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let products = [
+        {
+          id: 1,
+          name: "men men",
+          price: 20000,
+          quantity: 20,
+          category: "mon an dan toc Mong",
+        },
+        {
+          id: 2,
+          name: "mut",
+          price: 80000,
+          quantity: 21,
+          category: "mon an dan toc Kinh",
+        },
+        {
+          id: 3,
+          name: "com lam",
+          price: 40000,
+          quantity: 15,
+          category: "mon an dan toc Mong",
+        },
+        {
+          id: 4,
+          name: "banh dau xanh",
+          price: 60000,
+          quantity: 30,
+          category: "mon an dan toc Kinh",
+        },
+      ];
+      let cart = [];
+      function showItemsByCategory() {
+        let categories = [
+          ...new Set(products.map((product) => product.category)),
+        ];
+
+        categories.forEach((category) => {
+          let filteredProducts = products.filter(
+            (product) => product.category === category
+          );
+          console.log(`Danh muc: ${category}`);
+          console.table(filteredProducts);
+        });
+      }
+      function buyProduct() {
+        let productId = +prompt("Nhap ID san pham ban muon mua:");
+        let product = products.find((p) => p.id === productId);
+
+        if (!product) {
+          alert("San pham khong ton tai.");
+          return;
+        }
+        let quantity = +prompt(
+          `Nhap so luong ban muon mua (Con lai: ${product.quantity}):`
+        );
+        if (quantity <= 0 || isNaN(quantity)) {
+          alert("So luong khong hop le.");
+          return;
+        }
+        if (quantity > product.quantity) {
+          alert("So luong khong du trong kho.");
+          return;
+        }
+        product.quantity -= quantity;
+
+        let cartItem = cart.find((item) => item.id === productId);
+        if (cartItem) {
+          cartItem.quantity += quantity;
+        } else {
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: quantity,
+          });
+        }
+        alert("Da them vao gio hang!");
+      }
+      function sortProducts() {
+        let order = +prompt(
+          "Chon cach sap xep:\n1. Gia tang dan\n2. Gia giam dan"
+        );
+        if (order === 1) {
+          products.sort((a, b) => a.price - b.price);
+        } else if (order === 2) {
+          products.sort((a, b) => b.price - a.price);
+        } else {
+          alert("Lua chon khong hop le.");
+          return;
+        }
+        console.table(products);
+      }
+      function calculateTotal() {
+        if (cart.length === 0) {
+          alert("Gio hang trong.");
+          return;
+        }
+        let total = cart.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+        console.log("🛒 Gio hang cua ban:");
+        console.table(cart);
+        alert(`Tong so tien can thanh toan: ${total.toLocaleString()} VND`);
+      }
+      let answer;
+      let end = false;
+      do {
+        answer = +prompt(
+          "1. Hien thi san pham theo danh muc\n" +
+            "2. Chon san pham de mua\n" +
+            "3. Sap xep san pham theo gia\n" +
+            "4. Tinh so tien trong gio hang\n" +
+            "5. Thoat\nCau tra loi cua ban:"
+        );
+        if (isNaN(answer) || answer < 1 || answer > 5) {
+          alert("Sai cu phap, vui long nhap so tu 1 den 5.");
+          continue;
+        }
+        switch (answer) {
+          case 1:
+            showItemsByCategory();
+            break;
+          case 2:
+            buyProduct();
+            break;
+          case 3:
+            sortProducts();
+            break;
+          case 4:
+            calculateTotal();
+            break;
+          case 5:
+            alert("Thoat chuong trinh.");
+            end = true;
+            break;
+        }
+      } while (!end);
+    </script>
+  </body>
+</html>
