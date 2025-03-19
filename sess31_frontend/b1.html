@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="text">This is a text</h1>
+    <button id="showBtn">Show text</button>
+    <button id="hideBtn">Hide text</button>
+    <script>
+      let show = document.querySelector("#showBtn");
+      let hide = document.querySelector("#hideBtn");
+      let text = document.querySelector("#text");
+
+      show.onclick = function () {
+        text.style.display = "block";
+      };
+      hide.onclick = function () {
+        text.style.display = "none";
+      };
+    </script>
+  </body>
+</html>

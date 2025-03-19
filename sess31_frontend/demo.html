@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .form-add {
+      background-color: aqua;
+    }
+    .hidden {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+  </style>
+  <body>
+    <h1 id="head1">head</h1>
+    <ul>
+      <li class="course">HTML</li>
+      <li class="course">CSS</li>
+      <li class="course">JS</li>
+    </ul>
+    <ul id="productsList">
+      <li class="products">cam</li>
+      <li class="products">quyt</li>
+      <li class="products">xoai</li>
+    </ul>
+    <input type="text" name="email" />
+    <h2 id="userName">Nguyen Van A</h2>
+    <div id="demo">
+      <span>Hello</span>
+      <span>RIKKEIIII</span>
+      <span style="display: none">EDUCATION</span>
+      <form action="" class="hidden" id="form">
+        <h1>Them tai khoan</h1>
+      </form>
+    </div>
+    <script>
+      //lay theo id
+      let head1 = document.getElementById("head1");
+      console.log(head1);
+
+      //lay theo class
+      let courses = document.getElementsByClassName("course");
+      console.log("courses", courses);
+
+      //lay theo ca 2 thong qua querySelector
+      let productsList = document.querySelector("#productsList");
+      console.log(productsList);
+      let productsItem = document.querySelectorAll(".products");
+      console.log(productsItem);
+
+      //lay ra tat ca cac the <li>
+      let liList = document.querySelectorAll("li");
+      console.log(liList);
+
+      //lay theo name
+      let email = document.querySelector("input[name='email']");
+      console.log(email);
+
+      //lay ra theo cha con
+      let childProducts = document.querySelectorAll("#productsList li");
+      console.log(childProducts);
+
+      let userName = document.querySelector("#userName");
+      console.log(userName.innerText);
+      console.log(userName.textContent);
+      console.log(userName.innerHTML);
+
+      let demo = document.querySelector("#demo");
+      console.log("innerText: ", demo.innerText);
+      console.log("textContent", demo.textContent);
+      console.log("innerHTML", demo.innerHTML);
+
+      //classList
+      let form = document.querySelector("#form");
+      //them class vao 1 phan tu
+      form.classList.add("form-add");
+
+      //xoa class khoi 1 phan tu
+      form.classList.remove("form");
+
+      //kiem tra xem co class khong
+      console.log(form.classList.contains("hidden"));
+
+      //them/xoa class neu da ton tai hoac chua ton tai
+      form.classList.toggle("show");
+    </script>
+  </body>
+</html>

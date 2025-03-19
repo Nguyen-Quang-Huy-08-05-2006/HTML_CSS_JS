@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="text">
+      <h1>Toogle Dark/Light mode</h1>
+      <p>
+        Click the button to toogle between dark and light mode for this page
+      </p>
+    </div>
+    <button style="display: block" id="dark">Toogle dark mode</button>
+    <button style="display: none" id="light">Toogle light mode</button>
+    <script>
+      let texts = document.querySelector("#text");
+      let dark = document.querySelector("#dark");
+      let light = document.querySelector("#light");
+      let background = document.querySelector("body");
+
+      dark.onclick = function () {
+        background.style.backgroundColor = "black";
+        texts.style.color = "white";
+        dark.style.display = "none";
+        light.style.display = "block";
+      };
+      light.onclick = function () {
+        background.style.backgroundColor = "white";
+        texts.style.color = "black";
+        light.style.display = "none";
+        dark.style.display = "block";
+      };
+    </script>
+  </body>
+</html>
+<!-- Cach 2 (toogle)
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Dark/Light Mode</title>
+    <style>
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">
+        <h1>Toggle Dark/Light Mode</h1>
+        <p>Click the button to toggle between dark and light mode for this page</p>
+    </div>
+    <button id="toggleMode">Toggle Dark Mode</button>
+
+    <script>
+        let toggleBtn = document.querySelector("#toggleMode");
+        let body = document.body;
+
+        toggleBtn.onclick = function () {
+            body.classList.toggle("dark-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                toggleBtn.textContent = "Toggle Light Mode";
+            } else {
+                toggleBtn.textContent = "Toggle Dark Mode";
+            }
+        };
+    </script>
+</body>
+</html>
+ -->

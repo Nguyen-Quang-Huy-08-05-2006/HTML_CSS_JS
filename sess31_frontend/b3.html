@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Change background color</h2>
+    <p>Mouse click</p>
+    <button id="green" style="background-color: green">xanh</button>
+    <button id="red" style="background-color: red">đỏ</button>
+    <button id="violet" style="background-color: violet">tím</button>
+    <script>
+      let green = document.querySelector("#green");
+      let red = document.querySelector("#red");
+      let violet = document.querySelector("#violet");
+      let background = document.querySelector("body");
+
+      green.onclick = function () {
+        background.style.backgroundColor = "green";
+        green.style.color = "white";
+        red.style.color = "black";
+        violet.style.color = "black";
+      };
+      red.onclick = function () {
+        background.style.backgroundColor = "red";
+        red.style.color = "white";
+        green.style.color = "black";
+        violet.style.color = "black";
+      };
+      violet.onclick = function () {
+        background.style.backgroundColor = "violet";
+        violet.style.color = "white";
+        red.style.color = "black";
+        green.style.color = "black";
+      };
+    </script>
+  </body>
+</html>

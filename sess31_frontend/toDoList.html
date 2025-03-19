@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>To do list</h1>
+    <div>
+      <form action="" id="form">
+        <input type="text" name="" id="jobName" />
+        <button id="btnSubmit" type="submit">Submit</button>
+      </form>
+      <span style="display: none" id="error"></span>
+    </div>
+    <ul>
+      <!-- <li>Hoc</li>
+      <li>Lam viec nha</li>
+      <li>Game</li> -->
+    </ul>
+    <script>
+      //lay ra tat ca element
+      let form = document.querySelector("#form");
+      let input = document.querySelector("#jobName");
+      let btn = document.querySelector("#btnSubmit");
+      let error = document.querySelector("#error");
+      let jobs = [];
+      function renderJobs() {
+        job.forEach((job, index) => {
+          //tao ra element la the <li>
+          const liElement = document.createElement("li");
+
+          //gan noi dung cho tung mang
+        });
+      }
+
+      //lay gia tri trong o input
+      input.addEventListener("input", function () {
+        console.log(event.target.value);
+        if (!event.target.value) {
+          error.style.display = "block";
+          error.textContent = "Khong duoc de trong";
+        } else {
+          error.style.display = "none";
+          //gan gia tri cho bien
+          input = event.target.value;
+        }
+      });
+      //submit form
+      form.addEventListener("submit", function () {
+        //ngan chan su kien mac dinh(f5)
+        event.preventDefault();
+
+        //RESET LAI GIA TRI CUA BIEN INPUTVALUE
+
+        console.log("subMitted");
+        //them cv vao trong mang
+        if (!input) {
+          let newJob = {
+            id: Math.ceil(Math.random() * 1000),
+            name: input,
+            status: false,
+          };
+          jobs.push(newjob);
+          alert("Them sv thanh cong");
+        }
+      });
+    </script>
+  </body>
+</html>
