@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #plus {
+      width: 70px;
+      padding: 20px;
+      color: white;
+      background-color: green;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+    #plus:hover {
+      background-color: lightgreen;
+      cursor: pointer;
+      color: black;
+    }
+    #minus {
+      width: 70px;
+      padding: 20px;
+      color: white;
+      background-color: red;
+      border-radius: 10px;
+      margin-left: 10px;
+    }
+    #minus:hover {
+      background-color: pink;
+      cursor: pointer;
+      color: black;
+    }
+    #operators {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    #text {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 50px;
+    }
+  </style>
+  <body>
+    <div id="text">Chu se thay doi kich thuoc khi click</div>
+    <div id="operators">
+      <button id="plus">+</button><button id="minus">-</button>
+    </div>
+    <script>
+      let text = document.querySelector("#text");
+      let plus = document.querySelector("#plus");
+      let minus = document.querySelector("#minus");
+      let size = 20;
+      plus.onclick = function () {
+        size += 1;
+        text.style.fontSize = size + "px";
+      };
+      minus.onclick = function () {
+        size -= 1;
+        text.style.fontSize = size + "px";
+      };
+    </script>
+  </body>
+</html>

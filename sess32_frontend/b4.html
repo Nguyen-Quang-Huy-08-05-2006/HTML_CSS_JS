@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input" placeholder="nhap vao email" />
+    <div id="true" style="display: none">email hop le!</div>
+    <div id="false" style="display: none">email khong hop le!</div>
+    <br />
+    <button id="check">Check</button>
+    <script>
+      let input = document.querySelector("#input");
+      let trueEmail = document.querySelector("#true");
+      let falseEmail = document.querySelector("#false");
+      let check = document.querySelector("#check");
+      check.onclick = function () {
+        let email = input.value;
+        let checkEmail =
+          email.includes("@") &&
+          (email.endsWith(".com") || email.endsWith(".vn"));
+        if (checkEmail) {
+          trueEmail.style.color = "green";
+          trueEmail.style.display = "block";
+          falseEmail.style.display = "none";
+        } else {
+          trueEmail.style.display = "none";
+          falseEmail.style.color = "red";
+          falseEmail.style.display = "block";
+        }
+      };
+    </script>
+  </body>
+</html>

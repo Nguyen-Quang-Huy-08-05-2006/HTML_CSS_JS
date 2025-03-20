@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 20px;
+    }
+
+    .box1 {
+      border: 1px solid black;
+      width: 200px;
+      height: 200px;
+      text-align: center;
+    }
+    .box2 {
+      border: 1px solid black;
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      background-color: yellowgreen;
+    }
+    #button1 {
+      margin-top: 80px;
+    }
+    #button2 {
+      margin-top: 80px;
+    }
+  </style>
+  <body>
+    <div class="box1"><button id="button1">Doi mau nen</button></div>
+    <div class="box2"><button id="button2">Doi mau nen</button></div>
+    <script>
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      function setRandomColor() {
+        $("#colorpad").css("background-color", getRandomColor());
+      }
+
+      let all = document.querySelector("body");
+      let button1 = document.querySelector("#button1");
+      let button2 = document.querySelector("#button2");
+      let box1 = document.querySelector(".box1");
+      let box2 = document.querySelector(".box2");
+      button1.onclick = function () {
+        all.style.backgroundColor = getRandomColor();
+        box1.style.backgroundColor = getRandomColor();
+        box2.style.backgroundColor = getRandomColor();
+      };
+      button2.onclick = function () {
+        all.style.backgroundColor = getRandomColor();
+        box2.style.backgroundColor = getRandomColor();
+        box1.style.backgroundColor = getRandomColor();
+      };
+    </script>
+  </body>
+</html>

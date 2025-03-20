@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách môn học</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      input {
+        padding: 5px;
+        font-size: 16px;
+      }
+      button {
+        padding: 6px 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        font-size: 18px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Danh sách môn học</h2>
+    <input type="text" id="subjectInput" placeholder="Nhập tên môn học" />
+    <button id="addSubjectBtn">Thêm môn học</button>
+
+    <ul id="subjectList"></ul>
+
+    <script>
+      let subjectInput = document.getElementById("subjectInput");
+      let addSubjectBtn = document.getElementById("addSubjectBtn");
+      let subjectList = document.getElementById("subjectList");
+
+      let subjects = [];
+
+      // Hàm cập nhật danh sách môn học
+      function renderSubjects() {
+        subjectList.innerHTML = ""; // Xóa danh sách cũ
+        subjects.forEach((subject, index) => {
+          let li = document.createElement("li");
+          li.textContent = `${index + 1}. ${subject}`;
+          subjectList.appendChild(li);
+        });
+      }
+
+      // Xử lý khi nhấn nút "Thêm môn học"
+      addSubjectBtn.addEventListener("click", function () {
+        let subjectName = subjectInput.value.trim();
+        if (subjectName === "") {
+          alert("Tên môn học không được để trống!");
+          return;
+        }
+
+        subjects.push(subjectName); // Thêm môn học vào mảng
+        renderSubjects(); // Hiển thị lại danh sách
+        subjectInput.value = ""; // Xóa nội dung ô input
+        subjectInput.focus(); // Đưa con trỏ vào ô nhập
+      });
+    </script>
+  </body>
+</html>
