@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      position: relative;
+      width: 200px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    ion-icon {
+      position: relative;
+      bottom: 40px;
+      left: 190px;
+    }
+  </style>
+  <body>
+    <div>
+      <input
+        id="password"
+        type="password"
+        placeholder="Enter your password"
+      /><ion-icon id="iconShow" name="eye-outline"></ion-icon>
+      <ion-icon
+        id="iconClose"
+        style="display: none"
+        name="eye-off-outline"
+      ></ion-icon>
+    </div>
+    <script>
+      let password = document.querySelector("#password");
+      let iconShow = document.querySelector("#iconShow");
+      let iconClose = document.querySelector("#iconClose");
+      iconShow.style.cursor = "pointer";
+      iconClose.style.cursor = "pointer";
+      iconShow.onclick = function () {
+        password.type = "text";
+        iconShow.style.display = "none";
+        iconClose.style.display = "block";
+      };
+      iconClose.onclick = function () {
+        password.type = "password";
+        iconShow.style.display = "block";
+        iconClose.style.display = "none";
+      };
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea name="" id="text"></textarea>
+    <p id="count">0 ky tu</p>
+    <button id="checkCount">Kiem tra</button>
+    <script>
+      let text = document.querySelector("#text");
+      let count = document.querySelector("#count");
+      let checkCount = document.querySelector("#checkCount");
+      checkCount.onclick = function () {
+        let textValue = text.value;
+        let textLength = textValue.length;
+        count.innerHTML = `${textLength}  ky tu`;
+      };
+    </script>
+  </body>
+</html>

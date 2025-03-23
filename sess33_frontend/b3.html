@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <select name="category" id="category">
+        <option value="" selected disabled>--Lua chon danh muc--</option>
+        <option value=" Đồ ăn">Đồ ăn</option>
+        <option value="Nước">Nước</option>
+        <option value="Dụng cụ">Dụng cụ</option>
+      </select>
+      <button>Loc san pham</button>
+      <ul>
+        <li>Tên đồ ăn: Rau sạch - Danh mục: Đồ ăn</li>
+        <li>Tên đồ ăn: Thịt lợn - Danh mục: Đồ ăn</li>
+        <li>Tên đồ ăn: Pepsi không calo - Danh mục: Nước</li>
+        <li>Tên đồ ăn: Cocacola - Danh mục: Nước</li>
+        <li>Tên đồ ăn: Cờ lê - Danh mục: Dụng cụ</li>
+        <li>Tên đồ ăn: Tuy vít - Danh mục: Dụng cụ</li>
+      </ul>
+    </form>
+    <script>
+      let dish = [
+        { name: "Rau sạch", category: " Đồ ăn" },
+        { name: "Thịt lợn", category: " Đồ ăn" },
+        { name: "Pepsi không calo", category: "Nước" },
+        { name: "Cocacola", category: "Nước" },
+        { name: "Cờ lê", category: "Dụng cụ" },
+        { name: "Tuy vít", category: "Dụng cụ" },
+      ];
+      let category = document.getElementById("category");
+      let form = document.querySelector("form");
+      let ul = document.querySelector("ul");
+      let button = document.querySelector("button");
+      button.onclick = function () {
+        event.preventDefault();
+        let selectedCategory = category.value;
+        let filteredDish = dish.filter(
+          (item) => item.category === selectedCategory
+        );
+        ul.innerHTML = "";
+        filteredDish.forEach((item) => {
+          let li = document.createElement("li");
+          li.textContent = `Tên đồ ăn: ${item.name} - Danh mục: ${item.category}`;
+          ul.appendChild(li);
+        });
+      };
+    </script>
+  </body>
+</html>
