@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Tổng thể */
+body {
+    background-color: #f4f7fc;
+    color: #333;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Form chính */
+#form {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Tiêu đề */
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Ô nhập nhiệm vụ */
+#add-questions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+#add-question {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#add-question:focus {
+    border-color: #3498db;
+    box-shadow: 0px 0px 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Nút thêm */
+#form #add {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#form #add:hover {
+    background-color: #219150;
+}
+
+/* Danh sách nhiệm vụ */
+#list-questions {
+    margin-top: 10px;
+}
+
+.list-questions {
+    display: flex;
+    flex-grow: 1;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    border-left: 4px solid #3498db;
+    transition: 0.3s;
+}
+
+.list-questions:hover {
+    background-color: #f9f9f9;
+}
+
+/* Nút xóa */
+.delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+.delete:hover {
+    background-color: #c0392b;
+}
+
+/* Hiển thị lỗi */
+#error {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+    </style>
+</head>
+<body>
+    <form id="form">
+        <h2>Todo List</h2>
+        <div id="add-questions">
+           <input type="text" id="add-question" placeholder="Nhập nhiệm vụ..."></input>
+           <br>
+           <p style="display: none;" id="error"></p>
+           <button id="add">Thêm</button>
+        </div>
+        <div id = "list-questions"></div>
+                
+    </form>
+    <script src="./bt4.js">
+        const formQuestion = document.querySelector("#form");
+const addQuest = document.querySelector("#add-questions");
+const inputUser = document.querySelector("#add-question");
+const btnAdd = document.querySelector("#add");
+const listQuestion = document.querySelector("#list-questions");
+const errorQuestion = document.querySelector("#error");
+let inputValue;
+
+let questions = [];
+
+function saveToLocalStorage() {
+    localStorage.setItem("tasks", JSON.stringify(questions));
+}
+
+function renderQuestion() {
+    listQuestion.innerHTML ="";
+    questions.forEach((question) => {
+        const liElement = document.createElement("li");
+        liElement.classList.add("list-questions");
+        liElement.style.listStyle = "none";
+
+        const taskName = document.createElement("span");
+        taskName.textContent = question.name;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "X";
+        deleteBtn.classList.add("delete");
+
+        deleteBtn.addEventListener("click", function () {
+            const isConfirmed = confirm("Bạn có chắc chắn muốn xóa nhiệm vụ này?");
+            if(isConfirmed){
+                const index = questions.findIndex(i => i.id === question.id);
+                if (index !== -1) {
+                    questions.splice(index, 1);
+                    saveToLocalStorage();
+                    renderQuestion();
+                }
+                
+            }
+                
+        });
+        liElement.appendChild(taskName);
+        liElement.appendChild(deleteBtn);
+        listQuestion.appendChild(liElement);
+    });
+    saveToLocalStorage();
+}
+
+// Lấy giá trị ô input
+inputUser.addEventListener("input", function (event) {
+   if (!event.target.value) {
+        errorQuestion.style.display = "block";
+        errorQuestion.textContent = "Tên nhiệm vụ không được để trống";
+
+   }else {
+    errorQuestion.style.display = "none";
+    inputValue = event.target.value;
+   } 
+   console.log(event.target.value);
+   
+});
+
+formQuestion.addEventListener("submit", function (event) {
+    event.preventDefault();
+    inputValue = inputUser.value.trim();
+
+    if (inputValue) {
+        const newQuest = {
+            id: Math.ceil(Math.random() * 10000),
+            name: inputValue,
+            status: false,
+        };
+
+        questions.push(newQuest);
+        saveToLocalStorage();
+
+        inputUser.value ="";
+
+        renderQuestion();
+
+        alert("Thêm nhiệm vụ thành công");
+    }
+});
+    </script>
+</body>
+</html>

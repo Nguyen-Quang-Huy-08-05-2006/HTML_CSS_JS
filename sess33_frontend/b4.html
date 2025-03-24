@@ -60,11 +60,9 @@
           description: "Loa Bluetooth chống nước với âm bass mạnh mẽ.",
         },
       ];
-
-      // Hàm hiển thị danh sách sản phẩm
       function displayProducts(productArray) {
         const productList = document.getElementById("product-list");
-        productList.innerHTML = ""; // Xóa danh sách cũ trước khi thêm mới
+        productList.innerHTML = "";
 
         productArray.forEach((product) => {
           productList.innerHTML += `
@@ -85,7 +83,6 @@
         });
       }
 
-      // Hiển thị toàn bộ sản phẩm khi tải trang
       displayProducts(products);
     </script>
   </body>

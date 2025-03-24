@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 320px;
+    }
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: cyan;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h3>Register</h3>
+      <p>Email</p>
+      <input type="email" id="email" />
+      <p>Password</p>
+      <input type="password" id="password" />
+      <p>Confirm Password</p>
+      <input type="password" id="confirmPassword" />
+      <br />
+      <button id="registerBtn">Register</button>
+    </div>
+    <script>
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const confirmPassword = document.getElementById("confirmPassword");
+      const button = document.getElementById("registerBtn");
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      button.onclick = function () {
+        const emailValue = email.value.trim();
+        const passwordValue = password.value.trim();
+        const confirmPasswordValue = confirmPassword.value.trim();
+        if (
+          emailValue.length === 0 ||
+          !emailValue.includes("@") ||
+          (!emailValue.endsWith(".com") && !emailValue.endsWith(".vn"))
+        ) {
+          alert("Email không hợp lệ");
+          return;
+        }
+        if (passwordValue.length === 0) {
+          alert("Mật khẩu không hợp lệ");
+          return;
+        }
+        if (confirmPasswordValue !== passwordValue) {
+          alert("Mật khẩu không trùng khớp");
+          return;
+        }
+        const newUser = {
+          email: emailValue,
+          password: passwordValue,
+        };
+
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("Đăng ký thành công");
+      };
+    </script>
+  </body>
+</html>

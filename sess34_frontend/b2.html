@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+        text-align: center;
+      }
+      .container {
+        width: 60%;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table {
+        border: 1px solid black;
+      }
+      th {
+        border: 1px solid black;
+      }
+      td {
+        border: 1px solid black;
+      }
+      th {
+        padding: 10px;
+        text-align: center;
+      }
+      td {
+        padding: 10px;
+        text-align: center;
+      }
+      .btn {
+        padding: 10px;
+        background: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .content {
+        width: 19%;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .date {
+        width: 19%;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .select {
+        width: 19%;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .userName {
+        width: 19%;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Task Management</h2>
+      <div>
+        <input id="content" class="content" type="text" placeholder="Content" />
+        <input id="date" class="date" type="date" />
+        <select id="select" class="select">
+          <option value="" selected disabled>Choose status</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <input
+          class="userName"
+          id="userName"
+          type="text"
+          placeholder="User name"
+        />
+        <button id="btn" class="btn">Submit</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Content</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Assigned to</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+
+    <script>
+      const content = document.getElementById("content");
+      const date = document.getElementById("date");
+      const select = document.getElementById("select");
+      const userName = document.getElementById("userName");
+      const btn = document.getElementById("btn");
+      const list = document.getElementById("list");
+
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      let editIndex = -1;
+      function renderTasks() {
+        list.innerHTML = "";
+        tasks.forEach((task, index) => {
+          list.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${task.content}</td>
+                        <td>${task.dueDate}</td>
+                        <td>${task.status}</td>
+                        <td>${task.assignedTo}</td>
+                        <td>
+                            <button class="btn-edit" onclick="editTask(${index})">Sửa</button>
+                            <button class="btn-delete" onclick="deleteTask(${index})">Xóa</button>
+                        </td>
+                    </tr>
+                `;
+        });
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+      }
+      btn.onclick = function () {
+        if (!content.value || !date.value || !select.value || !userName.value) {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return;
+        }
+        const newTask = {
+          content: content.value,
+          dueDate: date.value,
+          status: select.value,
+          assignedTo: userName.value,
+        };
+
+        if (editIndex === -1) {
+          tasks.push(newTask);
+        } else {
+          tasks[editIndex] = newTask;
+          editIndex = -1;
+          btn.textContent = "Submit";
+        }
+        renderTasks();
+        resetForm();
+      };
+      function deleteTask(index) {
+        if (confirm("Bạn có chắc chắn muốn xóa?")) {
+          tasks.splice(index, 1);
+          renderTasks();
+        }
+      }
+      function editTask(index) {
+        const task = tasks[index];
+        content.value = task.content;
+        date.value = task.dueDate;
+        select.value = task.status;
+        userName.value = task.assignedTo;
+        editIndex = index;
+        btn.textContent = "Cập nhật";
+      }
+      function resetForm() {
+        content.value = "";
+        date.value = "";
+        select.value = "";
+        userName.value = "";
+        editIndex = -1;
+        btn.textContent = "Submit";
+      }
+      renderTasks();
+    </script>
+  </body>
+</html>
