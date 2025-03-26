@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do-List</title>
+    <style>
+      form {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 400px;
+        margin: 10% auto;
+        border-radius: 8px;
+        padding: 20px;
+      }
+
+      #todo-container {
+        list-style: none;
+        padding: 0;
+        margin: auto;
+      }
+
+      #todo-container li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border-bottom: 1px solid gray;
+      }
+
+      .task-button {
+        display: flex;
+        gap: 10px;
+      }
+
+      button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #f0f0f0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <h1 style="text-align: center">To-Do-List K24</h1>
+      <div class="add-section" style="text-align: center">
+        <input type="text" id="input" placeholder="Thêm công việc" />
+        <button id="add-btn">Thêm</button>
+      </div>
+      <ul id="todo-container"></ul>
+    </form>
+
+    <script src="./b1.js"></script>
+  </body>
+</html>
