@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 50vh;
+      background-color: hsl(0deg 0% 98.04%);
+      padding-top: 62vh;
+    }
+    .food1,
+    .food2,
+    .food3 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: 1px solid black;
+      border-radius: 10px;
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .fa-heart {
+      color: red;
+    }
+    img {
+      height: 200px;
+      padding-right: 30px;
+    }
+    h1 {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+    }
+    p {
+      padding-bottom: 10px;
+    }
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      background-color: green;
+      color: white;
+      border-color: green;
+    }
+    button:hover {
+      background-color: white;
+      color: red;
+    }
+    button:hover ion-icon {
+      color: red;
+    }
+  </style>
+  <body>
+    <h1>Ban thich an mon nao nhat</h1>
+    <div class="food1">
+      <img
+        src="https://thanhnien.mediacdn.vn/Uploaded/kieutrinh/2022_10_08/banh-mi-cham-sua-dac-anh-le-ha-2347.jpg"
+        alt=""
+      />
+      <div class="text">
+        <p>Banh mi cham sua</p>
+        <p><i class="fa-solid fa-heart"></i></ion-icon> 0 Luot thich</p>
+        <button><i class="fa-solid fa-heart"></i> Thich</button>
+      </div>
+    </div>
+    <div class="food2">
+      <img
+        src="https://i2.ex-cdn.com/crystalbay.com/files/content/2024/08/15/bun-bo-hue-6-0935.jpeg"
+        alt=""
+      />
+      <div class="text">
+        <p>Bun bo Hue</p>
+        <p><i class="fa-solid fa-heart"></i></ion-icon> 0 Luot thich</p>
+        <button><i class="fa-solid fa-heart"></i> Thich</button>
+      </div>
+    </div>
+    <div class="food3">
+      <img
+        src="https://dienmaynewsun.com/wp-content/uploads/2020/12/cach-lam-nem-nuong-ninh-hoa-1.jpg"
+        alt=""
+      />
+      <div class="text">
+        <p>Nem nuong Nha Trang</p>
+        <p><i class="fa-solid fa-heart"></i></ion-icon> 0 Luot thich</p>
+        <button><i class="fa-solid fa-heart"></i> Thich</button>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      const buttons = document.querySelectorAll("button");
+      const icons = document.querySelectorAll(".icon");
+      const likeCounts = document.querySelectorAll(".text p:nth-child(2)");
+      let likes = JSON.parse(localStorage.getItem("likes")) || [0, 0, 0];
+      buttons.forEach((button, index) => {
+        likeCounts[
+          index
+        ].innerHTML = `<i class="fa-solid fa-heart"></i></ion-icon> ${likes[index]} Luot thich`;
+        button.addEventListener("click", () => {
+          likes[index]++;
+          likeCounts[
+            index
+          ].innerHTML = `<i class="fa-solid fa-heart"></i></ion-icon> ${likes[index]} Luot thich`;
+          localStorage.setItem("likes", JSON.stringify(likes));
+        });
+      });
+    </script>
+  </body>
+</html>
+```

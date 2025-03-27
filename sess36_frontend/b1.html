@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f6f8;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid black;
+      padding: 100px 200px;
+      border-radius: 10px;
+      background-color: white;
+    }
+    #name {
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+    h2 {
+      margin-bottom: 10px;
+      background-color: white;
+    }
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h2>Ten cua ban</h2>
+      <input type="text" id="name" placeholder="Nhap ten cua ban" />
+      <button class="save">Luu</button>
+    </div>
+    <script>
+      let name = localStorage.getItem("name");
+
+      if (name) {
+        document.body.innerHTML = `
+        <div class="container">
+            <h2>👋 Chào bạn, ${name}!</h2>
+            <button onclick="changeName()">Đổi tên</button>
+        </div>
+    `;
+      }
+      const saveButton = document.querySelector(".save");
+      if (saveButton) {
+        saveButton.onclick = function () {
+          let newName = document.querySelector("#name").value.trim();
+          if (!newName) {
+            alert("Vui lòng nhập tên của bạn");
+            return;
+          }
+          localStorage.setItem("name", newName);
+          location.reload();
+        };
+      }
+      function changeName() {
+        localStorage.removeItem("name");
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

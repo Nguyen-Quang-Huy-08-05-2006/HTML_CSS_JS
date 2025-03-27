@@ -1,1 +1,31 @@
-       
+       /* .status i {
+  font-size: 50px;
+} */
+p {
+    margin: 0;
+  }
+  tr {
+    height: 70px;
+  }
+
+  i {
+    cursor: pointer;
+  }
+  .status { 
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 5px 10px;
+  }
+  
+  .status.active {
+    background-color: rgba(200, 250, 187, 0.3);
+    border-radius: 999px;
+    color: green;
+  }
+  
+  .status.inactive {
+    background-color: rgba(255, 184, 184, 0.3);
+    border-radius: 999px;
+    color: red;
+  }

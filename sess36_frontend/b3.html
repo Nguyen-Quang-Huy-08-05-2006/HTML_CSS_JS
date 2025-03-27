@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+      .buttons {
+        display: flex;
+        gap: 10px;
+      }
+      .red {
+        background-color: red;
+        color: white;
+      }
+      .blue {
+        background-color: blue;
+        color: white;
+      }
+      .yellow {
+        background-color: yellow;
+        color: black;
+      }
+      .purple {
+        background-color: purple;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Chon mau nen ban yeu thich</h3>
+    <div class="buttons">
+      <button class="red">Do</button><button class="blue">Xanh</button
+      ><button class="yellow">Vang</button><button class="purple">Tim</button>
+    </div>
+    <p>Web se ghi nho ngay ca khi ban F5</p>
+    <script>
+      const savedColor = localStorage.getItem("color");
+      if (savedColor) {
+        const color = JSON.parse(savedColor);
+        document.body.style.backgroundColor = color;
+      }
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const color = button.className;
+          document.body.style.backgroundColor = color;
+          localStorage.setItem("color", JSON.stringify(color));
+        });
+      });
+    </script>
+  </body>
+</html>
